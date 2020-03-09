@@ -20,6 +20,7 @@ setup(
                       "flake8>=3.7.9",
                       "transitions>=0.7.2"
                       ],
+    tests_require=['pytest', 'pytest-pep8', 'pytest-cov', 'pytest-catchlog'],
     packages=find_packages(),
     description="command line software to play with your WhatsApp",
     long_description=long_description,
