@@ -1,8 +1,25 @@
-dist: xenial
 language: python
-python:
-- '3.6'
+cache: pip
+
+before_install:
+  - pip install --upgrade pip
 install:
-- python setup.py install
+  - pip install -r requirements.txt
+  - pip install codecov
 script:
-- python setup.py test
+  - coverage run -m pytest
+after_success:
+  - codecov
+  
+matrix:
+  include:
+    - python: '3.7'
+    - python: '3.6'
+    - python: '3.5'
+
+
+
+
+
+
+
